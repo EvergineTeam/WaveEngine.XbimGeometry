@@ -38,6 +38,18 @@
       <FileType>Assembly</FileType>
     </XbimInteropFiles>
   </ItemGroup>
+
+  <ItemGroup Condition=" '$(Platform)' == 'ARM64' OR '$(Platform)' == 'AnyCPU'">
+    <XbimInteropFiles Condition="'$(MSBuildThisFileDirectory)' != '' And
+                                   HasTrailingSlash('$(MSBuildThisFileDirectory)')"
+        Include="$(MSBuildThisFileDirectory)**\Xbim.Geometry.EngineARM64.dll" >
+      <Visible>True</Visible>
+      <Group></Group>
+      <PublishState>Include</PublishState>
+      <TargetPath></TargetPath>
+      <FileType>Assembly</FileType>
+    </XbimInteropFiles>
+  </ItemGroup>
   <!--
   ******************************************************************************
   **                   Xbim Interop Library Build Targets                   **

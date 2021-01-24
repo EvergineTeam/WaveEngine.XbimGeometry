@@ -38,6 +38,18 @@
       <FileType>Assembly</FileType>
     </XbimInteropFiles64>
   </ItemGroup>
+
+  <ItemGroup Condition=" '$(Platform)' == 'ARM64' OR '$(Platform)' == 'AnyCPU'">
+    <XbimInteropFilesARM64 Condition="'$(MSBuildThisFileDirectory)' != '' And
+                                   HasTrailingSlash('$(MSBuildThisFileDirectory)')"
+        Include="$(MSBuildThisFileDirectory)ARM64\*.dll" >
+      <Visible>True</Visible>
+      <Group></Group>
+      <PublishState>Include</PublishState>
+      <TargetPath>ARM64</TargetPath>
+      <FileType>Assembly</FileType>
+    </XbimInteropFilesARM64>
+  </ItemGroup>
   <!--
   ******************************************************************************
   **                   Xbim Interop Library Build Targets                   **
@@ -81,6 +93,29 @@
     <Copy SourceFiles="@(XbimInteropFiles64)"
           DestinationFiles="@(XbimInteropFiles64 -> '$(OutputPath)$(XbimCustomBinPath)x64\%(Filename)%(Extension)')"/>         
   </Target>
+  
+  <!--
+  ******************************************************************************
+  -->
+  
+  <Target Name="CopyXbimInteropFilesARM64"
+          Condition="'$(CopyXbimInteropFilesARM64)' != 'false' And
+                     '$(OutputPath)' != '' And
+                     HasTrailingSlash('$(OutputPath)') And
+                     Exists('$(OutputPath)')"
+          Inputs="@(XbimInteropFilesARM64)"
+          Outputs="@(XbimInteropFilesARM64 -> '$(OutputPath)$(XbimCustomBinPath)ARM64\%(Filename)%(Extension)')">
+    <!--
+        NOTE: Copy "Xbim.Geometry.Enginexx.dll" and all related files, for every
+              architecture that we support, to the build output directory.
+    -->
+    <Message Text="Copying Geometry Engine files @(XbimInteropFilesARM64)" Importance="high" />
+    <Message Text="Copying Geometry Engines to bin directory $(OutputPath)$(XBimCustomBinPath)" Importance="high" />
+
+    <!-- Consumers can over-ride the bin output folder by setting XbimCustomBinPath -->
+    <Copy SourceFiles="@(XbimInteropFilesARM64)"
+          DestinationFiles="@(XbimInteropFilesARM64 -> '$(OutputPath)$(XbimCustomBinPath)ARM64\%(Filename)%(Extension)')"/>
+  </Target>
 
   <!--
   ******************************************************************************
@@ -97,6 +132,7 @@
     -->
     <Delete Files="@(XbimInteropFiles32 -> '$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" />
     <Delete Files="@(XbimInteropFiles64 -> '$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Delete Files="@(XbimInteropFilesARM64 -> '$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
 
 
@@ -108,6 +144,9 @@
       <Output TaskParameter="Include" ItemName="_DeploymentManifestFiles" />
     </CreateItem>
     <CreateItem Include="@(XbimInteropFiles64)" AdditionalMetadata="TargetPath=%(RecursiveDir)%(Filename)%(Extension);IsDataFile=false">
+      <Output TaskParameter="Include" ItemName="_DeploymentManifestFiles" />
+    </CreateItem>
+    <CreateItem Include="@(XbimInteropFilesARM64)" AdditionalMetadata="TargetPath=%(RecursiveDir)%(Filename)%(Extension);IsDataFile=false">
       <Output TaskParameter="Include" ItemName="_DeploymentManifestFiles" />
     </CreateItem>
   </Target>
@@ -122,6 +161,7 @@
       $(BuildDependsOn);
       CopyXbimInteropFiles32;
       CopyXbimInteropFiles64;
+      CopyXbimInteropFilesARM64;
     </BuildDependsOn>
     <PublishOnlyDependsOn>
       ExtendedPublishChecks;

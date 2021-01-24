@@ -12,19 +12,67 @@
     <AssemblyVersion>5.4.0.1</AssemblyVersion>
     <FileVersion>5.4.0.1</FileVersion>
     <Version>5.7.0.0-Dev</Version>
-    <Platforms>x86;x64;AnyCPU</Platforms>
+    <Platforms>x86;x64;ARM64;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
     <PackageReleaseNotes>Version 5.2 NetCoreApp3.1 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
 </PackageReleaseNotes>
   </PropertyGroup>
 
-  
+  <ItemGroup Label="ProjectConfigurations">
+
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+      <ManagedPlatform>x86</ManagedPlatform>
+    </ProjectConfiguration>
+
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+      <ManagedPlatform>x86</ManagedPlatform>
+    </ProjectConfiguration>
+
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+      <ManagedPlatform>x64</ManagedPlatform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+      <ManagedPlatform>x64</ManagedPlatform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+      <ManagedPlatform>ARM64</ManagedPlatform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+      <ManagedPlatform>ARM64</ManagedPlatform>
+    </ProjectConfiguration>
+  </ItemGroup>
+
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <PlatformTarget>ARM64</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Platform)'=='AnyCPU'">
@@ -39,7 +87,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
-  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <PlatformTarget>ARM64</PlatformTarget>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<Content Include="..\Xbim.Geometry.Engine.Interop.targets">
@@ -50,7 +100,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.8" />
-    <PackageReference Include="Xbim.Essentials" Version="5.1.313-develop" />
+    <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(Platform)'=='AnyCPU'">
@@ -60,14 +110,21 @@
             Platform=Win32;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\x32\
           </AdditionalProperties>
         </NativeGeometryEngine>
+        
         <NativeGeometryEngine Include="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj">
           <AdditionalProperties>
             Platform=x64;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\x64\
           </AdditionalProperties>
         </NativeGeometryEngine>
+
+        <NativeGeometryEngine Include="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj">
+          <AdditionalProperties>
+            Platform=ARM64;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\arm64\
+          </AdditionalProperties>
+        </NativeGeometryEngine>
       </ItemGroup>
       <ItemGroup>
-        <Content Include="bin\$(Configuration)\netcoreapp3.1\x32\Xbim.Geometry.Engine32.dll">
+       <Content Include="bin\$(Configuration)\netcoreapp3.1\x32\Xbim.Geometry.Engine32.dll">
           <Pack>true</Pack>
           <PackagePath>build\netcoreapp3.1\x32;</PackagePath>
         </Content>
@@ -82,6 +139,14 @@
         <Content Include="bin\$(Configuration)\netcoreapp3.1\x64\Ijwhost.dll">
           <Pack>true</Pack>
           <PackagePath>build\netcoreapp3.1\x64;</PackagePath>
+        </Content>
+        <Content Include="bin\$(Configuration)\netcoreapp3.1\ARM64\Xbim.Geometry.Engine-ARM64.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1\arm64;</PackagePath>
+        </Content>
+        <Content Include="bin\$(Configuration)\netcoreapp3.1\ARM64\Ijwhost.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1\arm64;</PackagePath>
         </Content>
         <Content Include="..\Xbim.Geometry.Engine.Interop.targets">
           <Link>Xbim.Geometry.Interop.targets</Link>
@@ -117,13 +182,26 @@
         </Content>
       </ItemGroup>
     </When>
+    <When Condition="'$(Platform)'=='ARM64'">
+      <ItemGroup>
+        <ProjectReference Include="..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj">
+          <Private>true</Private>
+        </ProjectReference>
+      </ItemGroup>
+      <ItemGroup>
+        <Content Include="bin\$(Platform)\$(Configuration)\netcoreapp3.1\Xbim.Geometry.Engine-ARM64.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1;</PackagePath>
+        </Content>
+      </ItemGroup>
+    </When>
   </Choose>
   
   
   <!--We need to execute this after a build to ensure the nuget packages are in the correct place for the c++ binding-->
 
   <Target Name="BuildNativeCodeEngine" BeforeTargets="Build" Condition="'$(Platform)'=='AnyCPU'">
-    <Message Text="Building Xbim.Geometry.Engine x32 and x64 Native Dlls" Importance="High" />
+    <Message Text="Building Xbim.Geometry.Engine x32,x64 and ARM64 Native Dlls" Importance="High" />
     <MSBuild Projects="@(NativeGeometryEngine)" Properties="Configuration=$(Configuration) " Targets="Build">
       <Output TaskParameter="TargetOutputs" ItemName="AssembliesBuiltByChildProjects" />
     </MSBuild>
@@ -135,6 +213,9 @@
     </MSBuild>
     <Message Text="Cleaning Xbim.Geometry.Engine x64 Native Dlls" Importance="High" />
     <MSBuild Projects="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=x64;OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\netcoreapp3.1\" Targets="Clean">
+    </MSBuild>
+    <Message Text="Cleaning Xbim.Geometry.Engine ARMx64 Native Dlls" Importance="High" />
+    <MSBuild Projects="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=ARM64;OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\netcoreapp3.1\" Targets="Clean">
     </MSBuild>
   </Target>
 
