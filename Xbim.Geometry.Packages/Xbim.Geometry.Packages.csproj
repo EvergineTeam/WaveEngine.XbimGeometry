@@ -8,12 +8,17 @@
     <Platforms>x86;x64;AnyCPU</Platforms>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>5.7.0.0-WaveEngine</Version>
+    <PackageId>Xbim.Geometry.Engine</PackageId>
+    <AssemblyName>Xbim.Geometry.Engine</AssemblyName>
+    <RootNamespace>Xbim.Geometry.Engine</RootNamespace>
+    <AssemblyVersion>5.7.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.8" />
-    <PackageReference Include="Xbim.Essentials" Version="5.1.313-develop" />
+    <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
   </ItemGroup>
 
 </Project>

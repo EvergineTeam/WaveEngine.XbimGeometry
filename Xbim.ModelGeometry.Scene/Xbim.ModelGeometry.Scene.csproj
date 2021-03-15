@@ -8,11 +8,12 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>5.1.0.0-Dev</Version>
-    <AssemblyVersion>5.1.0.1</AssemblyVersion>
-    <FileVersion>5.1.0.1</FileVersion>
+    <Version>5.7.0.0-WaveEngine</Version>
+    <AssemblyVersion>5.7.0.1</AssemblyVersion>
+    <FileVersion>5.7.0.1</FileVersion>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
+    <PackageId>Xbim.ModelGeometry.Scene</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -34,7 +35,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
     <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
-    <PackageReference Include="Xbim.Essentials" Version="5.1.313-develop" />
+    <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
   </ItemGroup>
 
   <Choose>
