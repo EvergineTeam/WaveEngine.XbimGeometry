@@ -33,7 +33,7 @@ namespace Xbim.Geometry.Engine.Interop.Tests
         //        File.Copy(Path.Combine(Environment.CurrentDirectory, dll64), Path.Combine(tmpDllPath, dll64));
         //    Environment.SetEnvironmentVariable("GeometryEngineLocation", tmpDllPath);
         //    AssemblyName assemblyName = new AssemblyName();
-        //    assemblyName.CodeBase = Path.Combine(Environment.CurrentDirectory, "Xbim.Geometry.Engine.Interop.dll");
+        //    assemblyName.Location = Path.Combine(Environment.CurrentDirectory, "Xbim.Geometry.Engine.Interop.dll");
         //    dom.Load(assemblyName);
         //    var ge = new XbimGeometryEngine();
         //    var anyObject = ge.CreateSolidSet();

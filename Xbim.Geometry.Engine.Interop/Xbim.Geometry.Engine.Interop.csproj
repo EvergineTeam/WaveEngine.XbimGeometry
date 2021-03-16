@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <Title>Xbim Geometry Engine</Title>
@@ -14,7 +14,7 @@
     <Version>5.7.0.0-WaveEngine</Version>
     <Platforms>x86;x64;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
-    <PackageReleaseNotes>Version 5.2 NetCoreApp3.1 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
+    <PackageReleaseNotes>Version 5.2 net5 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
 </PackageReleaseNotes>
   </PropertyGroup>
 
@@ -57,36 +57,36 @@
       <ItemGroup>
         <NativeGeometryEngine Include="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj">
           <AdditionalProperties>
-            Platform=Win32;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\x32\
+            Platform=Win32;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\net5\x32\
           </AdditionalProperties>
         </NativeGeometryEngine>
         <NativeGeometryEngine Include="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj">
           <AdditionalProperties>
-            Platform=x64;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\x64\
+            Platform=x64;ManagedPlatform=AnyCPU; OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Configuration)\net5\x64\
           </AdditionalProperties>
         </NativeGeometryEngine>
       </ItemGroup>
       <ItemGroup>
-        <Content Include="bin\$(Configuration)\netcoreapp3.1\x32\Xbim.Geometry.Engine32.dll">
+        <Content Include="bin\$(Configuration)\net5\x32\Xbim.Geometry.Engine32.dll">
           <Pack>true</Pack>
-          <PackagePath>build\netcoreapp3.1\x32;</PackagePath>
+          <PackagePath>build\net5\x32;</PackagePath>
         </Content>
-        <Content Include="bin\$(Configuration)\netcoreapp3.1\x32\Ijwhost.dll">
+        <Content Include="bin\$(Configuration)\net5\x32\Ijwhost.dll">
           <Pack>true</Pack>
-          <PackagePath>build\netcoreapp3.1\x32;</PackagePath>
+          <PackagePath>build\net5\x32;</PackagePath>
         </Content>
-        <Content Include="bin\$(Configuration)\netcoreapp3.1\x64\Xbim.Geometry.Engine64.dll">
+        <Content Include="bin\$(Configuration)\net5\x64\Xbim.Geometry.Engine64.dll">
           <Pack>true</Pack>
-          <PackagePath>build\netcoreapp3.1\x64;</PackagePath>
+          <PackagePath>build\net5\x64;</PackagePath>
         </Content>
-        <Content Include="bin\$(Configuration)\netcoreapp3.1\x64\Ijwhost.dll">
+        <Content Include="bin\$(Configuration)\net5\x64\Ijwhost.dll">
           <Pack>true</Pack>
-          <PackagePath>build\netcoreapp3.1\x64;</PackagePath>
+          <PackagePath>build\net5\x64;</PackagePath>
         </Content>
         <Content Include="..\Xbim.Geometry.Engine.Interop.targets">
           <Link>Xbim.Geometry.Interop.targets</Link>
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-          <PackagePath>build\netcoreapp3.1;</PackagePath>
+          <PackagePath>build\net5;</PackagePath>
           <Pack>true</Pack>
         </Content>
       </ItemGroup>
@@ -98,9 +98,9 @@
         </ProjectReference>
       </ItemGroup>
       <ItemGroup>
-        <Content Include="bin\$(Platform)\$(Configuration)\netcoreapp3.1\Xbim.Geometry.Engine32.dll">
+        <Content Include="bin\$(Platform)\$(Configuration)\net5\Xbim.Geometry.Engine32.dll">
           <Pack>true</Pack>
-          <PackagePath>build\netcoreapp3.1;</PackagePath>
+          <PackagePath>build\net5;</PackagePath>
         </Content>       
       </ItemGroup>
     </When>
@@ -111,9 +111,9 @@
         </ProjectReference>
       </ItemGroup>
       <ItemGroup>
-        <Content Include="bin\$(Platform)\$(Configuration)\netcoreapp3.1\Xbim.Geometry.Engine64.dll">
+        <Content Include="bin\$(Platform)\$(Configuration)\net5\Xbim.Geometry.Engine64.dll">
           <Pack>true</Pack>
-          <PackagePath>build\netcoreapp3.1;</PackagePath>
+          <PackagePath>build\net5;</PackagePath>
         </Content>
       </ItemGroup>
     </When>
@@ -131,10 +131,10 @@
 
   <Target Name=" CleanNativeCodeEngine" BeforeTargets="Clean" Condition="'$(Platform)'=='AnyCPU'">
     <Message Text="Cleaning Xbim.Geometry.Engine x32 Native Dlls" Importance="High" />
-    <MSBuild Projects="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=Win32;OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\netcoreapp3.1\" Targets="Clean">
+    <MSBuild Projects="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=Win32;OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\net5\" Targets="Clean">
     </MSBuild>
     <Message Text="Cleaning Xbim.Geometry.Engine x64 Native Dlls" Importance="High" />
-    <MSBuild Projects="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=x64;OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\netcoreapp3.1\" Targets="Clean">
+    <MSBuild Projects="$(MSBuildProjectDirectory)\..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=x64;OutDir=..\Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\net5\" Targets="Clean">
     </MSBuild>
   </Target>
 

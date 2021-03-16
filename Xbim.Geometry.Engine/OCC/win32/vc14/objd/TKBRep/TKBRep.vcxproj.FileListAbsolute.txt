@@ -1,2 +1,0 @@
-C:\Users\Steve\Source\Repos\xBimTeam\XbimGeometry\Xbim.Geometry.Engine\OCC\win32\vc14\bind\TKBRep.pdb
-C:\Users\Steve\Source\Repos\xBimTeam\XbimGeometry\Xbim.Geometry.Engine\OCC\win32\vc14\objd\TKBRep\TKBRep.pdb

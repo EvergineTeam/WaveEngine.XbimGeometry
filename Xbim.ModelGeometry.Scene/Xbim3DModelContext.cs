@@ -1497,7 +1497,9 @@ namespace Xbim.ModelGeometry.Scene
             }
             else
             {
+#pragma warning disable SYSLIB0006 // Type or member is obsolete
                 threadToKill?.Abort();
+#pragma warning restore SYSLIB0006 // Type or member is obsolete
                 throw new TimeoutException();
             }
         }
@@ -1528,7 +1530,9 @@ namespace Xbim.ModelGeometry.Scene
             }
             else
             {
+#pragma warning disable SYSLIB0006 // Type or member is obsolete
                 threadToKill?.Abort();
+#pragma warning restore SYSLIB0006 // Type or member is obsolete
                 throw new TimeoutException();
             }
         }

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5</TargetFramework>
     <SignAssembly>false</SignAssembly>  
     <Platforms>x64;x86;AnyCPU</Platforms>  
     <Version>5.1.0.0-WaveEngine</Version>

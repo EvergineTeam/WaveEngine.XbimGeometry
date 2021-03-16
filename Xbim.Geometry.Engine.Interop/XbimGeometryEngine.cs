@@ -44,7 +44,7 @@ namespace Xbim.Geometry.Engine.Interop
             try
             {
                 var ass = Assembly.Load(assemblyName);
-                _logger.LogTrace("Loaded {fullName} from {codebase}", ass.GetName().FullName, ass.CodeBase);
+                _logger.LogTrace("Loaded {fullName} from {codebase}", ass.GetName().FullName, ass.Location);
                 var t = ass.GetType("Xbim.Geometry.XbimGeometryCreator");
                 var obj = Activator.CreateInstance(t);
                 _logger.LogTrace("Created Instance of {fullName}", obj.GetType().FullName);

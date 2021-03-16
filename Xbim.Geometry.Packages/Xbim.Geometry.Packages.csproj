@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5</TargetFramework>
     <OutputPath></OutputPath>
     <Configurations>Debug;Release</Configurations>
     <Platforms>x86;x64;AnyCPU</Platforms>
