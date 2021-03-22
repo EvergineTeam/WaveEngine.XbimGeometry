@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>5.7.0.0-WaveEngine</Version>
+    <Version>5.8.0.0-WaveEngine</Version>
     <AssemblyVersion>5.7.0.1</AssemblyVersion>
     <FileVersion>5.7.0.1</FileVersion>
     <Platforms>x64;x86;AnyCPU</Platforms>

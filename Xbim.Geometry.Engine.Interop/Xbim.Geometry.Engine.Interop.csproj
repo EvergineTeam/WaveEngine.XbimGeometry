@@ -11,7 +11,7 @@
     <PackageIcon>logo.png</PackageIcon>
     <AssemblyVersion>5.7.0.1</AssemblyVersion>
     <FileVersion>5.7.0.1</FileVersion>
-    <Version>5.7.0.0-WaveEngine</Version>
+    <Version>5.8.0.0-WaveEngine</Version>
     <Platforms>x86;x64;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
     <PackageReleaseNotes>Version 5.2 NetCoreApp3.1 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
