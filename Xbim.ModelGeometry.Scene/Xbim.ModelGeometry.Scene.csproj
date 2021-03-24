@@ -8,12 +8,13 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>5.8.0.0-WaveEngine</Version>
-    <AssemblyVersion>5.7.0.1</AssemblyVersion>
-    <FileVersion>5.7.0.1</FileVersion>
+    <Version>3.9.0.0-WaveEngine</Version>
+    <AssemblyVersion>3.9.0.1</AssemblyVersion>
+    <FileVersion>3.9.0.1</FileVersion>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
-    <PackageId>Xbim.ModelGeometry.Scene</PackageId>
+    <PackageId>WaveEngine.Xbim.ModelGeometry.Scene</PackageId>
+    <AssemblyName>WaveEngine.Xbim.ModelGeometry.Scene</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
