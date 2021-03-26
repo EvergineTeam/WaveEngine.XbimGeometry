@@ -167,6 +167,10 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Xbim.Geometry.Engine\Xbim.Geometry.Engine.vcxproj" />
+  </ItemGroup>
   <!--<Target Name="CopyPackage" AfterTargets="Pack">
     <Copy
       SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg"
