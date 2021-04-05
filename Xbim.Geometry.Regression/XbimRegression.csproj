@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <SignAssembly>false</SignAssembly>  
     <Platforms>x64;x86;AnyCPU</Platforms>  
-    <Version>5.1.0.0-WaveEngine</Version>
+    <PackageId>WaveEngine.XbimRegression</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <PlatformTarget>AnyCPU</PlatformTarget>

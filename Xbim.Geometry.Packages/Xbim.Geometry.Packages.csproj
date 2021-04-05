@@ -8,11 +8,8 @@
     <Platforms>x86;x64;AnyCPU</Platforms>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.9.0.0-WaveEngine</Version>
-    <PackageId>WaveEngine.Xbim.Geometry.Engine</PackageId>
-    <AssemblyName>WaveEngine.Xbim.Geometry.Engine</AssemblyName>
-    <RootNamespace>Xbim.Geometry.Engine</RootNamespace>
-    <AssemblyVersion>3.9.0.0</AssemblyVersion>
+    <AssemblyName>WaveEngine.Xbim.Geometry.Packages</AssemblyName>
+    <PackageId>WaveEngine.Xbim.Geometry</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -39,7 +39,7 @@ namespace Xbim.Geometry.Engine.Interop
 #if DELAY_LOAD
 
             var conventions = new XbimArchitectureConventions();    // understands the process we run under
-            string assemblyName = $"{conventions.AssemblyName}.dll";// + conventions.Suffix; dropping the use of a suffix
+            string assemblyName = $"{conventions.ModuleName}.dll";// + conventions.Suffix; dropping the use of a suffix
             _logger.LogDebug("Loading {assemblyName}", assemblyName);
             try
             {
