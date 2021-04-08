@@ -9,8 +9,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>WaveEngine.Xbim.Geometry.Engine.Interop</PackageId>
     <PackageIcon>logo.png</PackageIcon>
-    <AssemblyVersion>5.4.0.1</AssemblyVersion>
-    <FileVersion>5.4.0.1</FileVersion>
+    <AssemblyVersion>5.5.0.1</AssemblyVersion>
+    <FileVersion>5.5.0.1</FileVersion>
     <Version>5.7.0.0-Dev</Version>
     <Platforms>x86;x64;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>

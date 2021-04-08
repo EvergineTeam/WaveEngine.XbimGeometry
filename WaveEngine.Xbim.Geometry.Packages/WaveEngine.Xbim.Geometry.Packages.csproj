@@ -10,6 +10,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyName>WaveEngine.Xbim.Geometry.Packages</AssemblyName>
     <PackageId>WaveEngine.Xbim.Geometry</PackageId>
+    <AssemblyVersion>5.2.0.0</AssemblyVersion>
+    <FileVersion>5.2.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

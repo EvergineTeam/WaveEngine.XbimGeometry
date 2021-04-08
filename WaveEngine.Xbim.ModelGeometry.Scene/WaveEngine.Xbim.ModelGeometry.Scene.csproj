@@ -9,8 +9,8 @@
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <PackageIcon>logo.png</PackageIcon>
     <Version>5.1.0.0-Dev</Version>
-    <AssemblyVersion>5.1.0.1</AssemblyVersion>
-    <FileVersion>5.1.0.1</FileVersion>
+    <AssemblyVersion>5.2.0.1</AssemblyVersion>
+    <FileVersion>5.2.0.1</FileVersion>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
     <PackageId>WaveEngine.Xbim.ModelGeometry.Scene</PackageId>
