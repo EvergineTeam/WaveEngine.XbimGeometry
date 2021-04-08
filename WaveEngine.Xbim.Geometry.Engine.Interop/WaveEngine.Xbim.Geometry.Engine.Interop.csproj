@@ -40,9 +40,14 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
-  
+  <ItemGroup>
+    <KnownAppHostPack Update="@(KnownAppHostPack)">
+      <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
+    </KnownAppHostPack>
+  </ItemGroup>
 
-	<ItemGroup>
+
+  <ItemGroup>
     <Content Include="..\WaveEngine.Xbim.Geometry.Engine.Interop.targets">
       <Link>WaveEngine.Xbim.Geometry.Interop.targets</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -121,7 +126,13 @@
       </ItemGroup>
     </When>
   </Choose>
-  
+
+
+  <ItemGroup>
+    <KnownAppHostPack Update="@(KnownAppHostPack)">
+      <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
+    </KnownAppHostPack>
+  </ItemGroup>
   
   <!--We need to execute this after a build to ensure the nuget packages are in the correct place for the c++ binding-->
 

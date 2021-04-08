@@ -20,4 +20,10 @@
     <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
   </ItemGroup>
 
+  <ItemGroup>
+    <KnownAppHostPack Update="@(KnownAppHostPack)">
+      <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
+    </KnownAppHostPack>
+  </ItemGroup>
+  
 </Project>

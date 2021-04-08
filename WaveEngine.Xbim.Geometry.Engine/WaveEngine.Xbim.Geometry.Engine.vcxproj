@@ -161,6 +161,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <KnownAppHostPack Update="@(KnownAppHostPack)">
+      <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
+    </KnownAppHostPack>
+  </ItemGroup>
+  
+  <ItemGroup>
     <!--Native Source files-->
     <ClCompile Include="XbimCompound.cpp" />
     <ClCompile Include="XbimConvert.cpp" />
