@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <SignAssembly>false</SignAssembly>  
+    <Platforms>x64;x86;AnyCPU</Platforms>  
+    <PackageId>WaveEngine.XbimRegression</PackageId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NReco.Logging.File" Version="1.0.5" />
+    <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\WaveEngine.Xbim.ModelGeometry.Scene\WaveEngine.Xbim.ModelGeometry.Scene.csproj" />
+  </ItemGroup>
+ 
+  <!--<ItemGroup>
+    <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\$(TargetFramework)\WaveEngine.Xbim.Geometry.Engine32.dll" Link="WaveEngine.Xbim.Geometry.Engine32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\$(TargetFramework)\WaveEngine.Xbim.Geometry.Engine64.dll" Link="WaveEngine.Xbim.Geometry.Engine64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>-->
+</Project>

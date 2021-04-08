@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Title>Xbim ModelGeometry Scene</Title>
+    <IsPackable>true</IsPackable>
+    <Description>Provides support for the Geometry Scene creation.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <PackageIcon>logo.png</PackageIcon>
+    <Version>5.1.0.0-Dev</Version>
+    <AssemblyVersion>5.1.0.1</AssemblyVersion>
+    <FileVersion>5.1.0.1</FileVersion>
+    <Platforms>x64;x86;AnyCPU</Platforms>
+    <SignAssembly>false</SignAssembly>
+    <PackageId>WaveEngine.Xbim.ModelGeometry.Scene</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition="'$(Platform)'=='AnyCPU'">
+      <ItemGroup>
+        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x32\WaveEngine.Xbim.Geometry.Engine32.dll" Link="x32\WaveEngine.Xbim.Geometry.Engine32.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x32\Ijwhost.dll" Link="x32\Ijwhost.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x64\WaveEngine.Xbim.Geometry.Engine64.dll" Link="x64\WaveEngine.Xbim.Geometry.Engine64.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x64\Ijwhost.dll" Link="x64\Ijwhost.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+    <!--<When Condition="'$(Platform)'=='x86'">
+      <ItemGroup>
+        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\$(TargetFramework)\Xbim.Geometry.Engine32.dll" Link="Xbim.Geometry.Engine32.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Platform)'=='x64'">
+      <ItemGroup>
+        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\$(TargetFramework)\Xbim.Geometry.Engine64.dll" Link="Xbim.Geometry.Engine64.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>-->
+  </Choose>
+
+  <ItemGroup>
+    <None Include="images\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\WaveEngine.Xbim.Geometry.Engine.Interop.csproj" />
+  </ItemGroup>
+</Project>
