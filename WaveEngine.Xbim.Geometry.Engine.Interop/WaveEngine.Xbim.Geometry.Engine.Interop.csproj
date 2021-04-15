@@ -40,19 +40,23 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <Content Include="WaveEngine.Xbim.Geometry.Engine.Interop.build.targets" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>build\netcoreapp3.1;</PackagePath>
+    </Content>
+    <Content Include="WaveEngine.Xbim.Geometry.Engine.Interop.targets" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>build\netcoreapp3.1;</PackagePath>
+    </Content>
+  </ItemGroup>
+
   <ItemGroup>
     <KnownAppHostPack Update="@(KnownAppHostPack)">
       <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
     </KnownAppHostPack>
   </ItemGroup>
-
-
-  <ItemGroup>
-    <Content Include="..\WaveEngine.Xbim.Geometry.Engine.Interop.targets">
-      <Link>WaveEngine.Xbim.Geometry.Interop.targets</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.8" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.8" />
@@ -88,13 +92,6 @@
         <Content Include="bin\$(Configuration)\netcoreapp3.1\x64\Ijwhost.dll">
           <Pack>true</Pack>
           <PackagePath>build\netcoreapp3.1\x64;</PackagePath>
-        </Content>
-
-        <Content Include="..\WaveEngine.Xbim.Geometry.Engine.Interop.targets">
-          <Link>WaveEngine.Xbim.Geometry.Interop.targets</Link>
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-          <PackagePath>build\netcoreapp3.1;</PackagePath>
-          <Pack>true</Pack>
         </Content>
       </ItemGroup>
       
