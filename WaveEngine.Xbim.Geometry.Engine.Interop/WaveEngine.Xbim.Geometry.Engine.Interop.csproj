@@ -1,0 +1,176 @@
+﻿<Project DefaultTargets="Build" Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <Title>Xbim Geometry Engine</Title>
+    <Description>Provides support for the Ifc4 and Ifc2x3 Geometry conversion.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>WaveEngine.Xbim.Geometry.Engine.Interop</PackageId>
+    <PackageIcon>logo.png</PackageIcon>
+    <AssemblyVersion>5.5.0.1</AssemblyVersion>
+    <FileVersion>5.5.0.1</FileVersion>
+    <Version>5.7.0.0-Dev</Version>
+    <Platforms>x86;x64;AnyCPU</Platforms>
+    <SignAssembly>false</SignAssembly>
+    <PackageReleaseNotes>Version 5.2 NetCoreApp3.1 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
+</PackageReleaseNotes>
+    <AssemblyName>WaveEngine.Xbim.Geometry.Engine.Interop</AssemblyName>
+  </PropertyGroup>
+
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Platform)'=='AnyCPU'">
+    <DefineConstants>DELAY_LOAD</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WaveEngine.Xbim.Geometry.Engine.Interop.targets" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <KnownAppHostPack Update="@(KnownAppHostPack)">
+      <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
+    </KnownAppHostPack>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Include="WaveEngine.Xbim.Geometry.Engine.Interop.build.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WaveEngine.Xbim.Geometry.Engine.Interop.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.8" />
+    <PackageReference Include="Xbim.Essentials" Version="5.1.323" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(Platform)'=='AnyCPU'">
+      <ItemGroup>
+        <NativeGeometryEngine Include="$(MSBuildProjectDirectory)\..\WaveEngine.Xbim.Geometry.Engine\WaveEngine.Xbim.Geometry.Engine.vcxproj">
+          <AdditionalProperties>
+            Platform=Win32;ManagedPlatform=AnyCPU; OutDir=..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\x32\
+          </AdditionalProperties>
+        </NativeGeometryEngine>
+        <NativeGeometryEngine Include="$(MSBuildProjectDirectory)\..\WaveEngine.Xbim.Geometry.Engine\WaveEngine.Xbim.Geometry.Engine.vcxproj">
+          <AdditionalProperties>
+            Platform=x64;ManagedPlatform=AnyCPU; OutDir=..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\netcoreapp3.1\x64\
+          </AdditionalProperties>
+        </NativeGeometryEngine>
+      </ItemGroup>
+      <ItemGroup>
+        <Content Include="bin\$(Configuration)\netcoreapp3.1\x32\WaveEngine.Xbim.Geometry.Engine32.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1\x32;</PackagePath>
+        </Content>
+        <Content Include="bin\$(Configuration)\netcoreapp3.1\x32\Ijwhost.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1\x32;</PackagePath>
+        </Content>
+        <Content Include="bin\$(Configuration)\netcoreapp3.1\x64\WaveEngine.Xbim.Geometry.Engine64.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1\x64;</PackagePath>
+        </Content>
+        <Content Include="bin\$(Configuration)\netcoreapp3.1\x64\Ijwhost.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1\x64;</PackagePath>
+        </Content>
+      </ItemGroup>
+      
+    </When>
+    <When Condition="'$(Platform)'=='x86'">
+      <ItemGroup>
+        <ProjectReference Include="..\WaveEngine.Xbim.Geometry.Engine\WaveEngine.Xbim.Geometry.Engine.vcxproj">
+          <Private>true</Private>
+        </ProjectReference>
+      </ItemGroup>
+      <ItemGroup>
+        <Content Include="bin\$(Platform)\$(Configuration)\netcoreapp3.1\WaveEngine.Xbim.Geometry.Engine32.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1;</PackagePath>
+        </Content>       
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Platform)'=='x64'">
+      <ItemGroup>
+        <ProjectReference Include="..\WaveEngine.Xbim.Geometry.Engine\WaveEngine.Xbim.Geometry.Engine.vcxproj">
+          <Private>true</Private>
+        </ProjectReference>
+      </ItemGroup>
+      <ItemGroup>
+        <Content Include="bin\$(Platform)\$(Configuration)\netcoreapp3.1\WaveEngine.Xbim.Geometry.Engine64.dll">
+          <Pack>true</Pack>
+          <PackagePath>build\netcoreapp3.1;</PackagePath>
+        </Content>
+      </ItemGroup>
+    </When>
+  </Choose>
+
+
+  <ItemGroup>
+    <KnownAppHostPack Update="@(KnownAppHostPack)">
+      <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
+    </KnownAppHostPack>
+  </ItemGroup>
+  
+  <!--We need to execute this after a build to ensure the nuget packages are in the correct place for the c++ binding-->
+
+  <Target Name="BuildNativeCodeEngine" BeforeTargets="Build" Condition="'$(Platform)'=='AnyCPU'">
+    <Message Text="Building Xbim.Geometry.Engine x32 and x64 Native Dlls" Importance="High" />
+    <MSBuild Projects="@(NativeGeometryEngine)" Properties="Configuration=$(Configuration) " Targets="Build">
+      <Output TaskParameter="TargetOutputs" ItemName="AssembliesBuiltByChildProjects" />
+    </MSBuild>
+  </Target>
+
+  <Target Name=" CleanNativeCodeEngine" BeforeTargets="Clean" Condition="'$(Platform)'=='AnyCPU'">
+    <Message Text="Cleaning Xbim.Geometry.Engine x32 Native Dlls" Importance="High" />
+    <MSBuild Projects="$(MSBuildProjectDirectory)\..\WaveEngine.Xbim.Geometry.Engine\WaveEngine.Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=Win32;OutDir=..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\netcoreapp3.1\" Targets="Clean">
+    </MSBuild>
+    <Message Text="Cleaning Xbim.Geometry.Engine x64 Native Dlls" Importance="High" />
+    <MSBuild Projects="$(MSBuildProjectDirectory)\..\WaveEngine.Xbim.Geometry.Engine\WaveEngine.Xbim.Geometry.Engine.vcxproj" Properties="Configuration=$(Configuration);Platform=x64;OutDir=..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Platform)\$(Configuration)\netcoreapp3.1\" Targets="Clean">
+    </MSBuild>
+  </Target>
+
+  
+ 
+  
+  <ItemGroup>   
+    <Folder Include="images\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="images\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  <!--<Target Name="CopyPackage" AfterTargets="Pack">
+    <Copy
+      SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg"
+      DestinationFolder="$(OutputPath)Packages\$(Platform)\$(Configuration)\$(PackageId).$(PackageVersion).nupkg"
+    />
+  </Target>-->
+ 
+</Project>
