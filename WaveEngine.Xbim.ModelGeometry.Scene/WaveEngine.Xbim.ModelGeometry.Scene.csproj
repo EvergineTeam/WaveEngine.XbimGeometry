@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
     <Title>Xbim ModelGeometry Scene</Title>
     <IsPackable>true</IsPackable>
     <Description>Provides support for the Geometry Scene creation.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>5.1.0.0-Dev</Version>
+    <Version>5.8.0-Dev</Version>
     <AssemblyVersion>5.2.0.1</AssemblyVersion>
     <FileVersion>5.2.0.1</FileVersion>
     <Platforms>x64;x86;AnyCPU</Platforms>
@@ -41,18 +41,18 @@
   <Choose>
     <When Condition="'$(Platform)'=='AnyCPU'">
       <ItemGroup>
-        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x32\WaveEngine.Xbim.Geometry.Engine32.dll" Link="x32\WaveEngine.Xbim.Geometry.Engine32.dll">
+        <None Include="..\Output\x86\$(Configuration)\$(TargetFramework)\WaveEngine.Xbim.Geometry.Engine32.dll" Link="x32\WaveEngine.Xbim.Geometry.Engine32.dll">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x32\Ijwhost.dll" Link="x32\Ijwhost.dll">
+        <!--<None Include="..\Output\x86\$(Configuration)\$(TargetFramework)\Ijwhost.dll" Link="x32\Ijwhost.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>-->
+        <None Include="..\Output\x64\$(Configuration)\$(TargetFramework)\WaveEngine.Xbim.Geometry.Engine64.dll" Link="x64\WaveEngine.Xbim.Geometry.Engine64.dll">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x64\WaveEngine.Xbim.Geometry.Engine64.dll" Link="x64\WaveEngine.Xbim.Geometry.Engine64.dll">
+        <!--<None Include="..\Output\x64\$(Configuration)\$(TargetFramework)\Ijwhost.dll" Link="x64\Ijwhost.dll">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Include="..\WaveEngine.Xbim.Geometry.Engine.Interop\bin\$(Configuration)\$(TargetFramework)\x64\Ijwhost.dll" Link="x64\Ijwhost.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
+        </None>-->
       </ItemGroup>
     </When>
     <!--<When Condition="'$(Platform)'=='x86'">

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="Build">
+    <Message Text="Building configuration $(Configuration) with output path $(OutputPath)" Importance="High" />
+  </Target>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{B272120D-A62E-41A2-964D-69999DBA0B40}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>WaveEngine.Xbim.Geometry.Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>WaveEngine.Xbim.Geometry.Engine.net472</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LinkKeyFile>$(ProjectDir)..\XbimOpenSourceKeyFile.snk</LinkKeyFile>
+    <TargetName>WaveEngine.Xbim.Geometry.Engine32</TargetName>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <LinkDelaySign>false</LinkDelaySign>
+    <IntDir>$(Platform)\$(Configuration)\$(TargetFramework)\</IntDir>
+    <OutDir>$(SolutionDir)Output\x86\$(Configuration)\$(TargetFramework)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <LinkKeyFile>$(ProjectDir)..\XbimOpenSourceKeyFile.snk</LinkKeyFile>
+    <TargetName>WaveEngine.Xbim.Geometry.Engine64</TargetName>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <IntDir>$(Platform)\$(Configuration)\$(TargetFramework)\</IntDir>
+    <OutDir>$(SolutionDir)Output\x64\$(Configuration)\$(TargetFramework)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LinkKeyFile>$(ProjectDir)..\XbimOpenSourceKeyFile.snk</LinkKeyFile>
+    <TargetName>WaveEngine.Xbim.Geometry.Engine32</TargetName>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <IntDir>$(Platform)\$(Configuration)\$(TargetFramework)\</IntDir>
+    <OutDir>$(SolutionDir)Output\x86\$(Configuration)\$(TargetFramework)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <LinkKeyFile>$(ProjectDir)..\XbimOpenSourceKeyFile.snk</LinkKeyFile>
+    <TargetName>WaveEngine.Xbim.Geometry.Engine64</TargetName>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <IntDir>$(Platform)\$(Configuration)\$(TargetFramework)\</IntDir>
+    <OutDir>$(SolutionDir)Output\x64\$(Configuration)\$(TargetFramework)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Link>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;user32.lib;comdlg32.lib;wsock32.lib;Psapi.lib;TKBO.lib;TKBOOL.lib;TKBRep.lib;TKernel.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKMath.lib;TKMesh.lib;TKOffset.lib;TKPrim.lib;TKShHealing.lib;TKTopAlgo.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\OCC\win32\vc14\bind\</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>./OCC/inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;user32.lib;comdlg32.lib;wsock32.lib;Psapi.lib;TKBO.lib;TKBOOL.lib;TKBRep.lib;TKernel.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKMath.lib;TKMesh.lib;TKOffset.lib;TKPrim.lib;TKShHealing.lib;TKTopAlgo.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\OCC\win64\vc14\bind\</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>./OCC/inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Link>
+      <FullProgramDatabaseFile>
+      </FullProgramDatabaseFile>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;user32.lib;comdlg32.lib;wsock32.lib;Psapi.lib;TKBO.lib;TKBOOL.lib;TKBRep.lib;TKernel.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKMath.lib;TKMesh.lib;TKOffset.lib;TKPrim.lib;TKShHealing.lib;TKTopAlgo.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\OCC\win32\vc14\bin\</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <ClCompile>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>./OCC/inc</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <FullProgramDatabaseFile>
+      </FullProgramDatabaseFile>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;user32.lib;comdlg32.lib;wsock32.lib;Psapi.lib;TKBO.lib;TKBOOL.lib;TKBRep.lib;TKernel.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKMath.lib;TKMesh.lib;TKOffset.lib;TKPrim.lib;TKShHealing.lib;TKTopAlgo.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\OCC\win64\vc14\bin\</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <ClCompile>
+      <AdditionalIncludeDirectories>./OCC/inc</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Ifc4">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Ifc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Ifc2x3">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Ifc2x3.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Tessellator">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Tessellator.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Common">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Common.dll</HintPath>
+    </Reference>
+    <!--<Reference Include="ljwhost">
+      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\ljwhost.dll</HintPath>
+    </Reference>-->
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Common">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Ifc4">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Ifc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Ifc2x3">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Ifc2x3.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Tessellator">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Tessellator.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ljwhost">
+      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\ljwhost.dll</HintPath>
+    </Reference>
+    
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="XbimCompound.cpp" />
+    <ClCompile Include="XbimConvert.cpp" />
+    <ClCompile Include="XbimCurve.cpp" />
+    <ClCompile Include="XbimCurve2D.cpp" />
+    <ClCompile Include="XbimEdge.cpp" />
+    <ClCompile Include="XbimEdgeSet.cpp" />
+    <ClCompile Include="XbimFace.cpp" />
+    <ClCompile Include="XbimFaceSet.cpp" />
+    <ClCompile Include="XbimGeometryCreator.cpp" />
+    <ClCompile Include="XbimGeometryObject.cpp" />
+    <ClCompile Include="XbimGeometryObjectSet.cpp" />
+    <ClCompile Include="XbimMesh.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="XbimNativeApi.cpp" />
+    <ClCompile Include="XbimOccShape.cpp" />
+    <ClCompile Include="XbimOccWriter.cpp" />
+    <ClCompile Include="XbimPoint3DWithTolerance.cpp" />
+    <ClCompile Include="XbimProgressMonitor.cpp" />
+    <ClCompile Include="XbimShell.cpp" />
+    <ClCompile Include="XbimShellSet.cpp" />
+    <ClCompile Include="XbimSolid.cpp" />
+    <ClCompile Include="XbimSolidSet.cpp" />
+    <ClCompile Include="XbimVertex.cpp" />
+    <ClCompile Include="XbimVertexSet.cpp" />
+    <ClCompile Include="XbimWire.cpp" />
+    <ClCompile Include="XbimWireSet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="XbimCompound.h" />
+    <ClInclude Include="XbimConstraints.h" />
+    <ClInclude Include="XbimConvert.h" />
+    <ClInclude Include="XbimCurve.h" />
+    <ClInclude Include="XbimCurve2D.h" />
+    <ClInclude Include="XbimEdge.h" />
+    <ClInclude Include="XbimEdgeSet.h" />
+    <ClInclude Include="XbimFace.h" />
+    <ClInclude Include="XbimFaceSet.h" />
+    <ClInclude Include="XbimGeometryCreator.h" />
+    <ClInclude Include="XbimGeometryObject.h" />
+    <ClInclude Include="XbimGeometryObjectSet.h" />
+    <ClInclude Include="XbimMesh.h" />
+    <ClInclude Include="XbimNativeApi.h" />
+    <ClInclude Include="XbimOccShape.h" />
+    <ClInclude Include="XbimOccWriter.h" />
+    <ClInclude Include="XbimPoint3DWithTolerance.h" />
+    <ClInclude Include="XbimProgressMonitor.h" />
+    <ClInclude Include="XbimShell.h" />
+    <ClInclude Include="XbimShellSet.h" />
+    <ClInclude Include="XbimSolid.h" />
+    <ClInclude Include="XbimSolidSet.h" />
+    <ClInclude Include="XbimVertex.h" />
+    <ClInclude Include="XbimVertexSet.h" />
+    <ClInclude Include="XbimWire.h" />
+    <ClInclude Include="XbimWireSet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\WaveEngine.Xbim.Geometry.Packages\WaveEngine.Xbim.Geometry.Packages.csproj" />
+    <None Include="WaveEngine.Xbim.Geometry.Engine.netcoreapp3.1.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKBO.vcxproj">
+      <Project>{07f549f7-10fe-1883-05a3-7fec1c66487a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKBool.vcxproj">
+      <Project>{036c536b-0315-01d1-1046-4dc00278e54f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKBRep.vcxproj">
+      <Project>{0b902df2-0c5d-0e79-0952-a2b4b6062142}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKernel.vcxproj">
+      <Project>{8dd8eaf9-148d-030e-0c02-c58c5e827b83}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKFillet.vcxproj">
+      <Project>{89d39d7a-139c-05c0-1584-080944985b2c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKG2d.vcxproj">
+      <Project>{bfb67bf6-1426-1412-06e6-bd1dc6edd0cd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKG3d.vcxproj">
+      <Project>{2782cecf-14c7-0121-14fc-c268835b7576}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKGeomAlgo.vcxproj">
+      <Project>{f04ae95c-12d6-13c7-1511-94521899dac8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKGeomBase.vcxproj">
+      <Project>{7cb3e890-16c1-1207-0238-0561ea5f61c4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKMath.vcxproj">
+      <Project>{7aeb42be-0908-080b-0700-7ede2329d6db}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKMesh.vcxproj">
+      <Project>{204c0c86-0089-1439-18c2-f3fad4d88118}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKOffset.vcxproj">
+      <Project>{ff10c86a-183c-12e6-16a9-8130aaa200c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKPrim.vcxproj">
+      <Project>{08554331-0f2a-1753-1139-dfbad462e1e1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKShHealing.vcxproj">
+      <Project>{75fc9041-01cf-1792-0912-d8de6ff38a78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="OCC\adm\msvc\vc142\TKTopAlgo.vcxproj">
+      <Project>{ea9e8694-10c9-13ee-00a7-06077bd54a69}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <!--<Import Project="WaveEngine.Xbim.Geometry.Engine - OCC.targets" />-->
+</Project>
