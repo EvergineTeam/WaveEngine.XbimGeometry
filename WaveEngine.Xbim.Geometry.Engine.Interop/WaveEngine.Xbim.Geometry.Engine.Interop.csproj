@@ -15,7 +15,7 @@
     <Platforms>x86;x64;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
     <PackageReleaseNotes>Version 5.2 NetCoreApp3.1 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
-</PackageReleaseNotes>
+    </PackageReleaseNotes>
     <AssemblyName>WaveEngine.Xbim.Geometry.Engine.Interop</AssemblyName>
   </PropertyGroup>
 
@@ -38,7 +38,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-
 
   <ItemGroup>
     <Content Include="WaveEngine.Xbim.Geometry.Engine.Interop.build.targets">
@@ -190,7 +189,6 @@
     </When>
   </Choose>
 
-
   <ItemGroup>
     <KnownAppHostPack Update="@(KnownAppHostPack)">
       <AppHostPackVersion Condition="'%(TargetFramework)' == 'TARGETFRAMEWORK'">EXISTINGVERSION</AppHostPackVersion>
@@ -215,7 +213,6 @@
     </MSBuild>
   </Target>
 
-  
   <ItemGroup>   
     <Folder Include="images\" />
   </ItemGroup>
