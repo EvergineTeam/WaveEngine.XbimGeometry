@@ -9,9 +9,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>WaveEngine.Xbim.Geometry.Engine.Interop</PackageId>
     <PackageIcon>logo.png</PackageIcon>
-    <AssemblyVersion>5.5.0.1</AssemblyVersion>
-    <FileVersion>5.5.0.1</FileVersion>
-    <Version>5.8.0-Dev</Version>
+    <AssemblyVersion>5.9.0.1</AssemblyVersion>
+    <FileVersion>5.9.0.1</FileVersion>
+    <Version>5.9.0-preview</Version>
     <Platforms>x86;x64;AnyCPU</Platforms>
     <SignAssembly>false</SignAssembly>
     <PackageReleaseNotes>Version 5.2 NetCoreApp3.1 support See https://github.com/xBimTeam/XbimGeometry/blob/master/CHANGELOG.md
@@ -82,7 +82,7 @@
           </AdditionalProperties>
         </NativeGeometryEngine>
       </ItemGroup>
-      <ItemGroup >
+      <ItemGroup>
         <Content Include="$(MSBuildProjectDirectory)\..\Output\x86\$(Configuration)\netcoreapp3.1\WaveEngine.Xbim.Geometry.Engine32.dll">
           <Pack>true</Pack>
           <PackagePath>build\netcoreapp3.1\x32;</PackagePath>
@@ -114,7 +114,7 @@
         </NativeGeometryEngine>
       </ItemGroup>
       
-     <ItemGroup >
+     <ItemGroup>
       <Content Include="$(MSBuildProjectDirectory)\..\Output\x86\$(Configuration)\net472\WaveEngine.Xbim.Geometry.Engine32.dll">
         <Pack>true</Pack>
         <PackagePath>build\net472\x32;</PackagePath>
