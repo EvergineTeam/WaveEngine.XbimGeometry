@@ -175,22 +175,22 @@
 
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging">
-      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc4">
-      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Ifc4.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Ifc4.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc2x3">
-      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Ifc2x3.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Ifc2x3.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Tessellator">
-      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Tessellator.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Tessellator.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Common">
-      <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Common.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\Xbim.Common.dll</HintPath>
     </Reference>
     <!--<Reference Include="ljwhost">
       <HintPath>$(SolutionDir)\WaveEngine.Xbim.Geometry.Packages\bin\x64\$(Configuration)\$(TargetFramework)\ljwhost.dll</HintPath>
@@ -207,25 +207,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Common">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Common.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Common.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc4">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Ifc4.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Ifc4.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc2x3">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Ifc2x3.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Ifc2x3.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Tessellator">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Tessellator.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\Xbim.Tessellator.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\System.Runtime.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ljwhost">
-      <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\ljwhost.dll</HintPath>
+      <HintPath>$(ProjectDir)\..\WaveEngine.Xbim.Geometry.Packages\bin\$(Platform)\$(Configuration)\net472\ljwhost.dll</HintPath>
     </Reference>
     
   </ItemGroup>
