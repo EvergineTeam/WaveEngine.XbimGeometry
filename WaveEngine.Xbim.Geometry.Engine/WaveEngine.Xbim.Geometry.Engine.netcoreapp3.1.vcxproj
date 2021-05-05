@@ -91,7 +91,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Output\x86\$(Configuration)\$(TargetFramework)\</OutDir>
     <IntDir>obj\x86\$(Configuration)\$(TargetFramework)\</IntDir>
-    <TargetName>$(ProjectName)32</TargetName>
+    <TargetName>WaveEngine.Xbim.Geometry.Engine32</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Output\x64\$(Configuration)\$(TargetFramework)\</OutDir>
@@ -233,7 +233,6 @@
   <ItemGroup>
     <Image Include="app.ico" />
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
       <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
@@ -257,7 +256,6 @@
       <HintPath>..\WaveEngine.Xbim.Geometry.Packages\bin\$(Configuration)\$(TargetFramework)\ljwhost.dll</HintPath>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <None Include="cpp.hint" />
   </ItemGroup>
