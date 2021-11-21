@@ -1,0 +1,135 @@
+<!--
+ *
+ * Xbim.Geometry.Engine.targets -
+ *
+ * WARNING: This MSBuild file requires MSBuild 4.0 features.
+ *
+ * Written by Steve Lockley with thanks to Joe Mistachkin and David Archer.
+ * Released to the public domain, use at your own risk!
+ *
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  ******************************************************************************
+  **                    Xbim Geometry Interop Library Build Items                    **
+  ******************************************************************************
+  -->
+
+  <ItemGroup Condition=" '$(Platform)' == 'x86' OR '$(Platform)' == 'AnyCPU'">
+    <XbimInteropFiles32 Condition="'$(MSBuildThisFileDirectory)' != '' And
+                                   HasTrailingSlash('$(MSBuildThisFileDirectory)')"
+        Include="$(MSBuildThisFileDirectory)\x32\*.dll" >
+      <Visible>True</Visible>
+      <Group></Group>
+      <PublishState>Include</PublishState>
+      <TargetPath>x32</TargetPath>
+      <FileType>Assembly</FileType>
+    </XbimInteropFiles32>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Platform)' == 'x64' OR '$(Platform)' == 'AnyCPU'">
+    <XbimInteropFiles64 Condition="'$(MSBuildThisFileDirectory)' != '' And
+                                   HasTrailingSlash('$(MSBuildThisFileDirectory)')"
+        Include="$(MSBuildThisFileDirectory)x64\*.dll" >
+      <Visible>True</Visible>
+      <Group></Group>
+      <PublishState>Include</PublishState>
+      <TargetPath>x64</TargetPath>
+      <FileType>Assembly</FileType>
+    </XbimInteropFiles64>
+  </ItemGroup>
+  <!--
+  ******************************************************************************
+  **                   Xbim Interop Library Build Targets                   **
+  ******************************************************************************
+  -->
+
+  <Target Name="CopyXbimInteropFiles32"
+          Condition="'$(CopyXbimInteropFiles32)' != 'false' And
+                     '$(OutputPath)' != '' And
+                     HasTrailingSlash('$(OutputPath)') And
+                     Exists('$(OutputPath)')"
+          Inputs="@(XbimInteropFiles32)"
+          Outputs="@(XbimInteropFiles32 -> '$(OutputPath)$(XbimCustomBinPath)x32\%(Filename)%(Extension)')">
+    <!--
+        NOTE: Copy "Xbim.Geometry.Enginexx.dll" and all related files, for every
+              architecture that we support, to the build output directory.
+    -->
+    <Message Text="Copying Geometry Engine files @(XbimInteropFiles32)" Importance="high" />
+    <Message Text="Copying Geometry Engines to bin directory $(OutputPath)$(XBimCustomBinPath)" Importance="high" />
+
+    <!-- Consumers can over-ride the bin output folder by setting XbimCustomBinPath -->
+    <Copy SourceFiles="@(XbimInteropFiles32)"
+          DestinationFiles="@(XbimInteropFiles32 -> '$(OutputPath)$(XbimCustomBinPath)x32\%(Filename)%(Extension)')"
+         />
+  </Target>
+  <Target Name="CopyXbimInteropFiles64"
+            Condition="'$(CopyXbimInteropFiles64)' != 'false' And
+                     '$(OutputPath)' != '' And
+                     HasTrailingSlash('$(OutputPath)') And
+                     Exists('$(OutputPath)')"
+            Inputs="@(XbimInteropFiles64)"
+            Outputs="@(XbimInteropFiles64 -> '$(OutputPath)$(XbimCustomBinPath)x64\%(Filename)%(Extension)')">
+    <!--
+        NOTE: Copy "Xbim.Geometry.Enginexx.dll" and all related files, for every
+              architecture that we support, to the build output directory.
+    -->
+    <Message Text="Copying Geometry Engine files @(XbimInteropFiles64)" Importance="high" />
+    <Message Text="Copying Geometry Engines to bin directory $(OutputPath)$(XBimCustomBinPath)" Importance="high" />
+
+    <!-- Consumers can over-ride the bin output folder by setting XbimCustomBinPath -->
+    <Copy SourceFiles="@(XbimInteropFiles64)"
+          DestinationFiles="@(XbimInteropFiles64 -> '$(OutputPath)$(XbimCustomBinPath)x64\%(Filename)%(Extension)')"/>         
+  </Target>
+
+  <!--
+  ******************************************************************************
+  -->
+
+  <Target Name="CleanXbimInteropFiles"
+          Condition="'$(CleanXbimInteropFiles)' != 'false' And
+                     '$(OutputPath)' != '' And
+                     HasTrailingSlash('$(OutputPath)') And
+                     Exists('$(OutputPath)')">
+    <!--
+        NOTE: Delete "Xbim.Geometry.Enginexx.dll" and all related files, for every
+              architecture that we support, from the build output directory.
+    -->
+    <Delete Files="@(XbimInteropFiles32 -> '$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Delete Files="@(XbimInteropFiles64 -> '$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+
+  <Target Name="ExtendedPublishChecks">
+    <Touch Files="@(IntermediateAssembly)" />
+    <Error Condition=" '$(Configuration)' != 'Release' "
+           Text="Ensure that the release is done through the Release configuration" />
+    <CreateItem Include="@(XbimInteropFiles32)" AdditionalMetadata="TargetPath=%(RecursiveDir)%(Filename)%(Extension);IsDataFile=false">
+      <Output TaskParameter="Include" ItemName="_DeploymentManifestFiles" />
+    </CreateItem>
+    <CreateItem Include="@(XbimInteropFiles64)" AdditionalMetadata="TargetPath=%(RecursiveDir)%(Filename)%(Extension);IsDataFile=false">
+      <Output TaskParameter="Include" ItemName="_DeploymentManifestFiles" />
+    </CreateItem>
+  </Target>
+  <!--
+  ******************************************************************************
+  **                 Xbim Geometry Interop Library Build Properties                  **
+  ******************************************************************************
+  -->
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      CopyXbimInteropFiles32;
+      CopyXbimInteropFiles64;
+    </BuildDependsOn>
+    <PublishOnlyDependsOn>
+      ExtendedPublishChecks;
+      $(PublishOnlyDependsOn);
+    </PublishOnlyDependsOn>
+    <CleanDependsOn>
+      $(CleanDependsOn);
+      CleanXbimInteropFiles;
+    </CleanDependsOn>
+  </PropertyGroup>
+</Project>
