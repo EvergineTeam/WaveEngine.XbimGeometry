@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Xbim.Geometry.Engine.Interop": {
-      "commandName": "Project",
-      "nativeDebugging": true
-    }
-  }
-}

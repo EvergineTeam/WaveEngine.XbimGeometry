@@ -1,2 +1,0 @@
-The update of OpenCascade source code on new releases is done through the code management application.
-https://github.com/CBenghi/NuSpecHelper
